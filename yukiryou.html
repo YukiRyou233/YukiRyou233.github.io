@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<!--
+	Aerial by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+  <head>
+    <title>雪涼的扣扣空间</title>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, user-scalable=no"
+    />
+    <link rel="icon" href="assets/img/yukiryou.jpg" type="image/x-icon">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/aplayer@1.10.1/dist/APlayer.min.css"
+    />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <noscript>
+      <link rel="stylesheet" href="assets/css/noscript.css" />
+    </noscript>
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-WPGXHL82T9"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+      gtag('config', 'G-WPGXHL82T9');
+    </script>
+  </head>
+
+  <body class="is-preload">
+    <div id="wrapper">
+      <div id="bg"></div>
+      <div id="overlay"></div>
+      <div id="main">
+        <!-- Header -->
+        <header id="header">
+          <div id="avatar"></div>
+          <h1>雪涼</h1>
+          <p>Ciallo～(∠・ω< )⌒☆</p>
+          <p>
+            背景图：<a id="bg-info" href="yukiryou.html#" target="_blank">Loading~</a>
+            <a href="yukiryou.html#" id="change">
+              <i class="fa fa-refresh"></i>
+            </a>
+          </p>
+
+          <nav>
+            <ul>
+              <li>
+                <a
+                  href=""
+                  class="icon brands fa-qq"
+                  target="_blank"
+                >
+                  <span class="label">QQ</span>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://t.me/+FViZSyM2BhRjMzk1"
+                  class="icon brands fa-telegram"
+                  target="_blank"
+                >
+                  <span class="label">Telegram</span>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://github.com/yukiryou233"
+                  class="icon brands fa-github"
+                  target="_blank"
+                >
+                  <span class="label">Github</span>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://space.bilibili.com/1042630900"
+                  class="icon brands fa-bilibili"
+                  target="_blank"
+                >
+                  <span class="label">Bilibili</span>
+                </a>
+              </li>
+              <li>
+                <a
+                  href="mailto:yukiryou233@gmail.com"
+                  class="icon solid fa-envelope"
+                  target="_blank"
+                >
+                  <span class="label">Email</span>
+                </a>
+              </li>
+              <li>
+                <a
+                  href=""
+                  class="icon soild fa-solid fa-blog"
+                  target="_self"
+                >
+                  <span class="label">博客</span>
+                </a>
+              </li>
+              <li>
+                <a
+                  href=""
+                  class="icon soild fa-solid fa-circle-dollar-to-slot"
+                  target="_self"
+                >
+                  <span class="label">赞助我</span>
+                </a>
+              </li>
+              <li>
+                <a
+                  href=""
+                  class="icon soild fa-solid fa-link"
+                  target="_self"
+                >
+                  <span class="label">友链</span>
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </header>
+
+        <script>
+          window.meting_api =
+            'https://meting.lgc2333.top/api?server=:server&type=:type&id=:id&auth=:auth&r=:r';
+        </script>
+        <script>
+    (function() {
+      debugger;
+    })();
+  </script>
+        <meting-js
+          server="netease"
+          type="playlist"
+          id="9639561853"
+          fixed="true"
+          autoplay="true"
+          order="random"
+        ></meting-js>
+
+        <!-- Footer -->
+        <footer id="footer">
+          <span class="copyright">
+            <a href="https://x.com/xiao7hxh0721/" target="_blank">
+              &copy; 雪涼 ⊙2024
+            </a>
+            <br />
+            from：<a href="https://html5up.net/" target="_blank">HTML5UP</a>
+          </span>
+        </footer>
+      </div>
+    </div>
+
+    <script src="assets/js/index.js"></script>
+    <script src="https://unpkg.com/aplayer/dist/APlayer.min.js"></script>
+    <script src="https://unpkg.com/meting/dist/Meting.min.js"></script>
+    <script>
+      window.onload = function () {
+        document.body.classList.remove('is-preload');
+      };
+      window.ontouchmove = function () {
+        return false;
+      };
+      window.onorientationchange = function () {
+        document.body.scrollTop = 0;
+      };
+    </script>
+    <script>
+      (async () => {
+        for (;;) {
+          await changeBG();
+          await sleep(45 * 1000);
+        }
+      })();
+    </script>
+  </body>
+</html>
