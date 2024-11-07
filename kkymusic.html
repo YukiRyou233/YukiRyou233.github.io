@@ -124,34 +124,37 @@
     }
 
     /* 手机端适配 */
-    @media (max-width: 768px) {
-      .player {
-        flex-direction: column;
-        padding: 15px;
-      }
-      .right-panel {
-        width: 100%;
-        margin-top: 20px;
-        border-top: none;
-      }
-      #songSection {
-        display: none; /* 隐藏专辑封面和歌曲信息 */
-      }
-      .song-info {
-        display: none; /* 隐藏歌曲名字、歌手等信息 */
-      }
-      .search-bar input[type="text"] {
-        width: 80%;
-      }
-      .lyrics {
-        max-height: 80vh; /* 使歌词部分占据更大空间 */
-        overflow-y: auto;
-        position: relative;
-      }
-      .footer {
-        font-size: 10px; /* 调整底部版权文字大小 */
-      }
-    }
+@media (max-width: 768px) {
+  .player {
+    flex-direction: column;
+    padding: 15px;
+    height: calc(100vh - 50px); /* 使用视口高度动态调整整体布局 */
+  }
+  .right-panel {
+    width: 100%;
+    margin-top: 20px;
+    border-top: none;
+    max-height: 60vh; /* 防止内容溢出，歌词部分可滚动 */
+  }
+  #cover {
+    display: none !important; /* 隐藏专辑封面 */
+  }
+  .song-info {
+    display: none !important; /* 隐藏歌曲名字、歌手等信息 */
+  }
+  .search-bar input[type="text"] {
+    width: 80%;
+  }
+  .lyrics {
+    max-height: 80vh; /* 使歌词部分占据更大空间 */
+    overflow-y: auto;
+    position: relative;
+  }
+  .footer {
+    font-size: 10px; /* 调整底部版权文字大小 */
+  }
+}
+
   </style>
 </head>
 <body>
