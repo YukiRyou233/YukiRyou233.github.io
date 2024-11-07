@@ -122,6 +122,36 @@
       background-color: #fff;
       border-top: 1px solid #ddd;
     }
+
+    /* 手机端适配 */
+    @media (max-width: 768px) {
+      .player {
+        flex-direction: column;
+        padding: 15px;
+      }
+      .right-panel {
+        width: 100%;
+        margin-top: 20px;
+        border-top: none;
+      }
+      #songSection {
+        display: none; /* 隐藏专辑封面和歌曲信息 */
+      }
+      .song-info {
+        display: none; /* 隐藏歌曲名字、歌手等信息 */
+      }
+      .search-bar input[type="text"] {
+        width: 80%;
+      }
+      .lyrics {
+        max-height: 80vh; /* 使歌词部分占据更大空间 */
+        overflow-y: auto;
+        position: relative;
+      }
+      .footer {
+        font-size: 10px; /* 调整底部版权文字大小 */
+      }
+    }
   </style>
 </head>
 <body>
@@ -203,20 +233,27 @@
         const currentTime = audio.currentTime;
         const lyrics = lyricsContainer.getElementsByTagName("p");
 
+        let highlightedLyricIndex = -1;
         for (let i = 0; i < lyrics.length; i++) {
           const lyricTime = parseFloat(lyrics[i].getAttribute("data-time"));
           if (i < lyrics.length - 1) {
             const nextLyricTime = parseFloat(lyrics[i + 1].getAttribute("data-time"));
             if (currentTime >= lyricTime && currentTime < nextLyricTime) {
+              highlightedLyricIndex = i;
               lyrics[i].classList.add("highlight");
-              lyricsContainer.scrollTop = lyrics[i].offsetTop - lyricsContainer.offsetHeight / 2;
             } else {
               lyrics[i].classList.remove("highlight");
             }
           } else if (currentTime >= lyricTime) {
+            highlightedLyricIndex = i;
             lyrics[i].classList.add("highlight");
-            lyricsContainer.scrollTop = lyrics[i].offsetTop - lyricsContainer.offsetHeight / 2;
           }
+        }
+
+        // 滚动高亮歌词到容器中央
+        if (highlightedLyricIndex !== -1) {
+          const highlightedLyric = lyrics[highlightedLyricIndex];
+          lyricsContainer.scrollTop = highlightedLyric.offsetTop - (lyricsContainer.clientHeight - highlightedLyric.clientHeight) / 2;
         }
       });
     }
