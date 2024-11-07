@@ -123,35 +123,65 @@
       border-top: 1px solid #ddd;
     }
 
-    /* 手机端适配 */
+/* 手机端适配 */
 @media (max-width: 768px) {
   .player {
     flex-direction: column;
     padding: 15px;
-    height: calc(100vh - 50px); /* 使用视口高度动态调整整体布局 */
+    height: auto; /* 取消固定高度，确保自适应 */
+    width: 100%;
   }
+
+  .left-panel {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+  }
+
   .right-panel {
     width: 100%;
     margin-top: 20px;
     border-top: none;
-    max-height: 60vh; /* 防止内容溢出，歌词部分可滚动 */
+    max-height: 50vh; /* 限制歌词部分高度 */
+    overflow-y: auto;
   }
+
+  #songSection {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 10px;
+    margin: 0;
+    height: auto; /* 使容器高度自适应 */
+  }
+
+  /* 隐藏封面和歌曲信息 */
   #cover {
     display: none !important; /* 隐藏专辑封面 */
   }
+
   .song-info {
     display: none !important; /* 隐藏歌曲名字、歌手等信息 */
   }
+
   .search-bar input[type="text"] {
-    width: 80%;
+    width: 80%; /* 调整搜索框宽度 */
   }
+
   .lyrics {
-    max-height: 80vh; /* 使歌词部分占据更大空间 */
+    font-size: 14px; /* 调整歌词文字大小 */
+    max-height: 40vh; /* 限制歌词显示区域 */
     overflow-y: auto;
     position: relative;
+    margin-top: 10px;
   }
+
   .footer {
     font-size: 10px; /* 调整底部版权文字大小 */
+    padding: 10px;
   }
 }
 
