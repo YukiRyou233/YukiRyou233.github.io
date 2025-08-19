@@ -968,3 +968,31 @@ a:hover {
 .aplayer-list-title {
   color: #000 !important;
 }
+
+#bg {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center center;
+  transition: background-image 1s ease-in-out; /* 避免闪烁 */
+}
+
+/* 淡出动画 */
+@keyframes bg-fade-out {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
+/* 淡入动画 */
+@keyframes bg-fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.bg-fade-out {
+  animation: bg-fade-out 1s forwards;
+}
+
+.bg-fade-in {
+  animation: bg-fade-in 1s forwards;
+}
